@@ -1,0 +1,22 @@
+.header {
+    height: 100px;
+    padding: 2rem 1rem;
+    color: #fff;
+    background-color: mediumorchid;
+    text-align: center;
+    &__title {
+        margin: 0;
+        letter-spacing: 2px;
+        opacity: 0.7;
+        user-select: none;
+        transition: .6ms;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
