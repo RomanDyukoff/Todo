@@ -1,5 +1,5 @@
 import './App.scss';
-import { Header, Main, Layout, Form, Button, Todo } from './components';
+import { Header, Main, Layout, Form, Todo } from './components';
 
 
 const todos = [
@@ -27,7 +27,6 @@ function App() {
       <Main>
         <Layout>
           <Form />
-          <Button />
           <Todo items={ todos }/>
         </Layout>
       </Main>
