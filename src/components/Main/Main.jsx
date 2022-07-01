@@ -2,7 +2,7 @@ const Main = ({ children }) => {
     
     return (
         <>
-            { children }
+            {children}
         </>
     )
 };

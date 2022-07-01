@@ -4,7 +4,9 @@ const Layout = ({ children }) => {
     
     return (
         <div className="container">
-            {children}
+            <div className="content">
+                {children}
+            </div>
         </div>
     )
 };

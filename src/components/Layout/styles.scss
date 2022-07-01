@@ -3,3 +3,11 @@
     height: 100vh;
     margin: 0 auto;
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 3rem auto;
+    gap: 2rem;
+}
