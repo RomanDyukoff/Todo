@@ -1,13 +1,14 @@
 import './styles.scss';
 
 
-const Item = ({ title, id, checkt }) => {
 
+const Item = ({ title, id, completed, handleToggle, removeTask }) => {
+    
     return (
-        <li className="item" data-id={id}>
-            <input type="checkbox" checkt={checkt} />
+        <li className="item" key={id} id={id}>
+            <input type="checkbox" checked={completed} onChange={() => handleToggle(id)}/>
             {title}
-            <span className="item__close">&times;</span>
+            <span className="item__close" onClick={() => removeTask(id)}>&times;</span>
         </li>
     )
 };

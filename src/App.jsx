@@ -1,33 +1,43 @@
 import './App.scss';
 import { Header, Main, Layout, Form, Todo } from './components';
+import { useState } from 'react'
 
-
-const todos = [
-  {
-    title: 'kek',
-    id: '123',
-    checkt: false,
-  },
-  {
-    title: 'lol',
-    id: '345',
-    checkt: false,
-  },
-  {
-    title: 'cheburek',
-    id: '222',
-    checkt: true,
-  },
-]
 
 function App() {
+
+  const [todos, setTodos] = useState([]);
+
+  const addTask = (inputValue) => {
+    
+    if (inputValue) {
+      const newItem = {
+        id: Math.random().toFixed(5),
+        title: inputValue,
+        completed: false,
+      }
+      setTodos([...todos, newItem])
+    }
+  }
+
+  const removeTask = (id) => {
+    setTodos([...todos.filter((todo) => todo.id !== id)])
+  }
+
+  const handleToggle = (id) => {
+    setTodos([
+      ...todos.map((todo) => 
+      todo.id === id ? {...todo, completed: !todo.completed} : {...todo}
+      )
+    ])
+  }
+
   return (
     <div className="App">
       <Header></Header>
       <Main>
         <Layout>
-          <Form />
-          <Todo items={ todos }/>
+          <Form addTask={addTask} />
+          <Todo items={ todos }  handleToggle={handleToggle} removeTask={removeTask} />
         </Layout>
       </Main>
     </div>
